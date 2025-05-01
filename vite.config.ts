@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import * as path from 'path'
+//import * as path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/NetworkVis/',
+  base: '/net-vis/',
   plugins: [react()],
-  resolve: {
+  /* resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  }
+  } */
 })
