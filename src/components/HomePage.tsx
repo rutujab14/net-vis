@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import "./HomePage.css";
-import search from "public/search.svg";
-import rocket from "public/rocket-takeoff.svg";
-import lightbulb from "public/lightbulb.svg";
-import globe from "public/globe2.svg";
-import gear from "public/gear-wide-connected.svg";
-import file from "public/file-earmark-easel.svg";
+import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
+import { SvgIcon } from "@mui/material";
 
 const HomePage = () => {
   return (
@@ -48,14 +44,19 @@ const HomePage = () => {
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src={search} alt="search" width="30px"></img>
+              {/* <img src={search} alt="search" width="30px"></img> */}
+              <SvgIcon component={ContentPasteSearchIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">Interactive Exploration</h3>
             <p>Click and drag nodes to explore connections dynamically.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src={gear} alt="gear" width="30px"></img>
+              <img
+                src="public/gear-wide-connected.svg"
+                alt="gear"
+                width="30px"
+              ></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Relationship Mapping</h3>
             <p>
@@ -66,7 +67,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src={file}
+                src="public/file-earmark-easel.svg"
                 alt="file earmark"
                 width="30px"
               ></img>
@@ -78,7 +79,11 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src={lightbulb} alt="lightbulb" width="30px"></img>
+              <img
+                src="public/lightbulb.svg"
+                alt="lightbulb"
+                width="30px"
+              ></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">
               Insightful Visualization
@@ -88,7 +93,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src={rocket}
+                src="public/rocket-takeoff.svg"
                 alt="rocket takeoff"
                 width="30px"
               ></img>
@@ -98,7 +103,7 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src={globe} alt="globe" width="30px"></img>
+              <img src="public/globe2.svg" alt="globe" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Future-Ready</h3>
             <p>
