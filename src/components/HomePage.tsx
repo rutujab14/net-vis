@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import "./HomePage.css";
+import search from "public/search.svg";
+import rocket from "public/rocket-takeoff.svg";
+import lightbulb from "public/lightbulb.svg";
+import globe from "public/globe2.svg";
+import gear from "public/gear-wide-connected.svg";
+import file from "public/file-earmark-easel.svg";
 
 const HomePage = () => {
   return (
@@ -49,11 +55,7 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
-                src="gear-wide-connected.svg"
-                alt="gear"
-                width="30px"
-              ></img>
+              <img src="gear-wide-connected.svg" alt="gear" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Relationship Mapping</h3>
             <p>
@@ -76,11 +78,7 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
-                src="lightbulb.svg"
-                alt="lightbulb"
-                width="30px"
-              ></img>
+              <img src="lightbulb.svg" alt="lightbulb" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">
               Insightful Visualization
@@ -90,7 +88,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="public/rocket-takeoff.svg"
+                src="rocket-takeoff.svg"
                 alt="rocket takeoff"
                 width="30px"
               ></img>
@@ -100,7 +98,7 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src="public/globe2.svg" alt="globe" width="30px"></img>
+              <img src="globe2.svg" alt="globe" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Future-Ready</h3>
             <p>
