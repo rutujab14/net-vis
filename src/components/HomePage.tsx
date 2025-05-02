@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import "./HomePage.css";
 import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
+import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { SvgIcon } from "@mui/material";
 
 const HomePage = () => {
@@ -52,11 +57,12 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
+              {/* <img
                 src="public/gear-wide-connected.svg"
                 alt="gear"
                 width="30px"
-              ></img>
+              ></img> */}
+              <SvgIcon component={PsychologyIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">Relationship Mapping</h3>
             <p>
@@ -66,11 +72,12 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
+              {/* <img
                 src="public/file-earmark-easel.svg"
                 alt="file earmark"
                 width="30px"
-              ></img>
+              ></img> */}
+              <SvgIcon component={ArticleOutlinedIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">
               Clean and Intuitive Interface
@@ -79,11 +86,12 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
+              {/* <img
                 src="public/lightbulb.svg"
                 alt="lightbulb"
                 width="30px"
-              ></img>
+              ></img> */}
+              <SvgIcon component={TipsAndUpdatesOutlinedIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">
               Insightful Visualization
@@ -92,18 +100,20 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img
+              {/* <img
                 src="public/rocket-takeoff.svg"
                 alt="rocket takeoff"
                 width="30px"
-              ></img>
+              ></img> */}
+              <SvgIcon component={RocketLaunchOutlinedIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">Optimized Performance</h3>
             <p>Designed to handle medium-sized networks smoothly.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src="public/globe2.svg" alt="globe" width="30px"></img>
+              {/* <img src="public/globe2.svg" alt="globe" width="30px"></img> */}
+              <SvgIcon component={UpdateOutlinedIcon} />
             </div>
             <h3 className="fs-2 text-body-emphasis">Future-Ready</h3>
             <p>
