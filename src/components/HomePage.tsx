@@ -42,7 +42,7 @@ const HomePage = () => {
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src="public/search.svg" alt="search" width="30px"></img>
+              <img src="search.svg" alt="search" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Interactive Exploration</h3>
             <p>Click and drag nodes to explore connections dynamically.</p>
@@ -50,7 +50,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="public/gear-wide-connected.svg"
+                src="gear-wide-connected.svg"
                 alt="gear"
                 width="30px"
               ></img>
@@ -64,7 +64,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="public/file-earmark-easel.svg"
+                src="file-earmark-easel.svg"
                 alt="file earmark"
                 width="30px"
               ></img>
@@ -77,7 +77,7 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="public/lightbulb.svg"
+                src="lightbulb.svg"
                 alt="lightbulb"
                 width="30px"
               ></img>
