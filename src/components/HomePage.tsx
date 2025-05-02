@@ -42,7 +42,7 @@ const HomePage = () => {
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src="src/assets/search.svg" alt="search" width="30px"></img>
+              <img src="public/search.svg" alt="search" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Interactive Exploration</h3>
             <p>Click and drag nodes to explore connections dynamically.</p>
@@ -50,8 +50,8 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="src/assets/gear-wide-connected.svg"
-                alt="search"
+                src="public/gear-wide-connected.svg"
+                alt="gear"
                 width="30px"
               ></img>
             </div>
@@ -64,8 +64,8 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="src/assets/file-earmark-easel.svg"
-                alt="search"
+                src="public/file-earmark-easel.svg"
+                alt="file earmark"
                 width="30px"
               ></img>
             </div>
@@ -77,8 +77,8 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="src/assets/lightbulb.svg"
-                alt="search"
+                src="public/lightbulb.svg"
+                alt="lightbulb"
                 width="30px"
               ></img>
             </div>
@@ -90,8 +90,8 @@ const HomePage = () => {
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <img
-                src="src/assets/rocket-takeoff.svg"
-                alt="search"
+                src="public/rocket-takeoff.svg"
+                alt="rocket takeoff"
                 width="30px"
               ></img>
             </div>
@@ -100,7 +100,7 @@ const HomePage = () => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <img src="src/assets/globe2.svg" alt="search" width="30px"></img>
+              <img src="public/globe2.svg" alt="globe" width="30px"></img>
             </div>
             <h3 className="fs-2 text-body-emphasis">Future-Ready</h3>
             <p>
