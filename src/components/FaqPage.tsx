@@ -28,7 +28,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 This application is designed to help users visualize and explore
                 complex network data, relationships, or connections between
                 various entities in an interactive and intuitive way. It allows
@@ -46,7 +46,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 No, signing up or creating an account is not required to use the
                 network visualizer. Simply open the application, and you can
                 start visualizing network data immediately. It's a
@@ -62,7 +62,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 You can visualize any data that can be represented as a graph of
                 nodes (entities) and edges (connections). This includes a wide
                 range of use cases like:
@@ -95,7 +95,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 The network visualizer offers several interactive features that
                 let you explore the data effectively:
               </p>
@@ -130,7 +130,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 The network visualizer is compatible with modern browsers,
                 including:
               </p>
@@ -154,7 +154,7 @@ const FaqPage = () => {
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p className="lead mb-4">
+              <p>
                 Yes, absolutely! This tool can be used for academic, research,
                 or educational purposes, including visualizing datasets for
                 research projects, teaching concepts related to networks and
