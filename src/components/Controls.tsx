@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Button } from "@mui/material";
 
 interface Props {
   onFileUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -17,8 +18,19 @@ const Controls = ({
 }: Props) => {
   return (
     <div>
-      <h2>Upload CSV to Visualize Network</h2> <br />
-      <input type="file" accept=".csv" onChange={onFileUpload} />
+      <h2>Network Visualizer App</h2> <br />
+      <label htmlFor="file-upload">
+        <input
+          id="file-upload"
+          type="file"
+          accept=".csv"
+          onChange={onFileUpload}
+          style={{ display: "none" }}
+        />
+        <Button variant="contained" component="span">
+          Upload CSV
+        </Button>
+      </label>
       <button onClick={onCrop}>Crop Network</button> <span />
       <button onClick={onReset}>Reset</button>
       <br />
