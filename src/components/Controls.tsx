@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Button } from "@mui/material";
+import { Button, styled } from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 interface Props {
   onFileUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -8,6 +9,18 @@ interface Props {
   showLabels: boolean;
   setShowLabels: (value: boolean) => void;
 }
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const Controls = ({
   onFileUpload,
@@ -27,8 +40,19 @@ const Controls = ({
           onChange={onFileUpload}
           style={{ display: "none" }}
         />
-        <Button variant="contained" component="span">
-          Upload CSV
+        <Button
+          component="label"
+          role={undefined}
+          variant="contained"
+          tabIndex={-1}
+          startIcon={<CloudUploadIcon />}
+        >
+          Upload files
+          <VisuallyHiddenInput
+            type="file"
+            onChange={(event) => console.log(event.target.files)}
+            multiple
+          />
         </Button>
       </label>
       <button onClick={onCrop}>Crop Network</button> <span />
