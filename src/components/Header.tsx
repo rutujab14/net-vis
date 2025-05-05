@@ -34,12 +34,12 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/about"
+                to="/network-visualizer"
                 className={`nav-link ${
-                  location.pathname === "/about" ? "active" : ""
+                  location.pathname === "/network-visualizer" ? "active" : ""
                 }`}
               >
-                About
+                Network Visualizer
               </Link>
             </li>
           </ul>
