@@ -5,451 +5,140 @@ const FaqPage = () => {
     <>
       <Header />
 
-      <div className="TemplateGalleryCategoryPage_faqContainer__ljHnY">
-        <section
-          className="TemplateGalleryContentRow_contentRow__63ESj"
-          aria-labelledby=":Rusbm:"
-        >
-          <div className="TemplateGalleryContentRow_header__F3cCg">
-            <div className="TemplateGalleryContentRow_heading__ofqyJ">
-              <h2
-                id=":Rusbm:"
-                className="typography_typography__Exx2D heading_heading__OmVf6"
-                style={
-                  {
-                    "--typography-font":
-                      "var(--typography-sans-600-bold-font-weight) var(--typography-sans-600-bold-font-size) / var(--typography-sans-600-bold-line-height) var(--typography-sans-600-bold-font-family)",
-                    "--typography-font-sm":
-                      "var(--typography-sans-700-bold-font-weight) var(--typography-sans-700-bold-font-size) / var(--typography-sans-700-bold-line-height) var(--typography-sans-700-bold-font-family)",
-                    "--typography-letter-spacing":
-                      "var(--typography-sans-600-bold-letter-spacing)",
-                    "--typography-letter-spacing-sm":
-                      "var(--typography-sans-700-bold-letter-spacing)",
-                    "--typography-color": "inherit",
-                  } as React.CSSProperties
-                }
-              >
-                FAQs
-              </h2>
+      <div id="content">
+        <div id="faq-content">
+          <h1>FAQs</h1>
+          <div className="qa">
+            <h3 className="question">What is this application used for?</h3>
+            <div className="answer">
+              <p>
+                This application is designed to help users visualize and explore
+                complex network data, relationships, or connections between
+                various entities in an interactive and intuitive way. It allows
+                you to represent data as nodes (individual entities) and edges
+                (connections between them), providing a clear and interactive
+                view of how different elements are interconnected. This can be
+                useful for visualizing social networks, organizational
+                hierarchies, computer networks, and more.
+              </p>
             </div>
           </div>
-          <picture className="TemplateGalleryCategoryPage_faqPicture__Ae_qj">
-            <img
-              alt=""
-              loading="lazy"
-              width="123"
-              height="149"
-              decoding="async"
-              data-nimg="1"
-              className="next-image"
-              style={{ color: "transparent" }}
-              srcSet="/_next/image?url=%2Ffront-static%2Fpages%2Ftemplates%2Fcategory-FAQ.png&amp;w=128&amp;q=75 1x, /_next/image?url=%2Ffront-static%2Fpages%2Ftemplates%2Fcategory-FAQ.png&amp;w=256&amp;q=75 2x"
-              src="/_next/image?url=%2Ffront-static%2Fpages%2Ftemplates%2Fcategory-FAQ.png&amp;w=256&amp;q=75"
-            />
-          </picture>
-          <article className="faqDrawers_faqWrap__5CDv_">
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    What is Network Visualizer application used for?
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "block",
-                        fill: "inherit",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      This application helps users visualize and explore network
-                      data or relationships between nodes in an interactive and
-                      intuitive way.{" "}
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </details>
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    Do I need to sign up to use the network visualizer?{" "}
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "block",
-                        fill: "inherit",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      No, there is no signup required. You can start visualizing
-                      data directly.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </details>
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    What kind of data can I visualize?{" "}
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "block",
-                        fill: "inherit",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      You can visualize data in the form of nodes and
-                      connections (edges). This can be social networks,
-                      technical graphs, dependency maps, or any custom datasets.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </details>
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    How can I interact with the visualization?{" "}
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={
-                        {
-                          width: "100%",
-                          height: "100%",
-                          display: "block",
-                          fill: "inherit",
-                          flexShrink: 0,
-                        } as React.CSSProperties
-                      }
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      You can click and drag nodes to reposition them, zoom in
-                      and out, and hover over connections for more details.{" "}
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </details>
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    What browsers are supported?{" "}
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={
-                        {
-                          width: "100%",
-                          height: "100%",
-                          display: "block",
-                          fill: "inherit",
-                          flexShrink: 0,
-                        } as React.CSSProperties
-                      }
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      We recommend using the latest versions of Chrome, Firefox,
-                      or Edge for the best experience.
-                    </p>
-                  </div>
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG"></p>
-                  </div>
-                </article>
-              </div>
-            </details>
-            <details className="faqDrawers_faq__0F7_v">
-              <summary className="faqDrawers_question__9BX_Y">
-                <div className="faqDrawers_questionText__CBY_y">
-                  <p className="text_text__cG3pf text_textWeightSemibold___lCV0 text_textSizeBody__4q5Cs">
-                    Can I use this tool for academic or research purposes?{" "}
-                  </p>
-                </div>
-                <div className="faqDrawers_questionToggleWrap__BNmqp">
-                  <div className="faqDrawers_toggle___qtvN">
-                    <svg
-                      className="togglePlus faqDrawers_toggleIcon__8gE6r"
-                      viewBox="0 0 14 14"
-                      style={
-                        {
-                          width: "100%",
-                          height: "100%",
-                          display: "block",
-                          fill: "inherit",
-                          flexShrink: 0,
-                        } as React.CSSProperties
-                      }
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7 0C7.55228 0 8 0.447715 8 1V6H13C13.5523 6 14 6.44772 14 7C14 7.55228 13.5523 8 13 8H8V13C8 13.5523 7.55228 14 7 14C6.44771 14 6 13.5523 6 13V8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H6V1C6 0.447715 6.44772 0 7 0Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div className="faqDrawers_answer__G1hbB">
-                <article
-                  className="contentfulRichText_richText__rW7Oq contentfulRichText_sans__UVbfz"
-                  style={
-                    {
-                      "--rich-text-font-config-font-size":
-                        "var(--typography-sans-200-regular-font-size)",
-                      "--rich-text-font-config-line-height":
-                        "var(--typography-sans-200-regular-line-height)",
-                      "--rich-text-font-config-font-family":
-                        "var(--font-family-sans)",
-                      "--rich-text-font-config-font-variant-numeric": "normal",
-                      "--rich-text-font-config-color": "var(--color-text-dark)",
-                    } as React.CSSProperties
-                  }
-                >
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG">
-                      Absolutely! Just make sure to cite or mention the project
-                      if you're using it for publication.
-                    </p>
-                  </div>
-                  <div
-                    className="contentfulRichText_bodyLimit__F5GOU"
-                    style={
-                      {
-                        "--rich-text-limit-max-width": "none",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p className="contentfulRichText_paragraph___hjRE contentfulRichText_enableThemeProvider__vI_iG"></p>
-                  </div>
-                </article>
-              </div>
-            </details>
-          </article>
-        </section>
+          <div className="qa">
+            <h3 className="question">
+              Do I need to sign up to use the network visualizer?
+            </h3>
+            <div className="answer">
+              <p>
+                No, signing up or creating an account is not required to use the
+                network visualizer. Simply open the application, and you can
+                start visualizing network data immediately. It's a
+                straightforward, hassle-free experience designed for users who
+                want to quickly explore their data without the need for an
+                account or personal information.
+              </p>
+            </div>
+          </div>
+          <div className="qa">
+            <h3 className="question">What kind of data can I visualize?</h3>
+            <div className="answer">
+              <p>
+                You can visualize any data that can be represented as a graph of
+                nodes (entities) and edges (connections). This includes a wide
+                range of use cases like:
+                <ul>
+                  <li>
+                    <b>Social Networks</b>: Connections between people, groups,
+                    or organizations.
+                  </li>
+                  <li>
+                    <b>Technical Graphs</b>: Relationships between servers,
+                    components, or other technical entities in a system.
+                  </li>
+                  <li>
+                    <b>Dependency Maps</b>: How different software modules,
+                    libraries, or microservices interact with each other.
+                  </li>
+                  <li>
+                    <b>Custom Datasets</b>: You can visualize any graph-based
+                    data that you wish to explore, whether it's biological
+                    networks, transport routes, or project dependencies.
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
+          <div className="qa">
+            <h3 className="question">
+              How can I interact with the visualization?
+            </h3>
+            <div className="answer">
+              <p>
+                The network visualizer offers several interactive features that
+                let you explore the data effectively:
+              </p>
+              <ul>
+                <li>
+                  <b>Click and Drag</b>: You can click and drag nodes around the
+                  screen to better organize the layout or focus on specific
+                  areas.
+                </li>
+                <li>
+                  <b>Zoom In/Out</b>: Zooming in and out helps you adjust the
+                  level of detail shown in the graph, allowing you to explore
+                  both high-level structures and individual node details.
+                </li>
+                <li>
+                  <b>Hover to See Details</b>: Hover over any node or edge to
+                  see more detailed information about it, such as its
+                  connections, attributes, or other relevant data points.
+                </li>
+                <li>
+                  <b>Node & Edge Customization</b>: Depending on the data, nodes
+                  may vary in size or color to represent different attributes,
+                  such as importance, type, or number of connections.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="qa">
+            <h3 className="question">What browsers are supported?</h3>
+            <div className="answer">
+              <p>
+                The network visualizer is compatible with modern browsers,
+                including:
+              </p>
+              <ul>
+                <li>
+                  <b>Google Chrome</b> (latest version)
+                </li>
+                <li>
+                  <b>Mozilla Firefox</b> (latest version)
+                </li>
+                <li>
+                  <b>Microsoft Edge</b> (latest version)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="qa">
+            <h3 className="question">
+              Can I use this tool for academic or research purposes?
+            </h3>
+            <div className="answer">
+              <p>
+                Yes, absolutely! This tool can be used for academic, research,
+                or educational purposes, including visualizing datasets for
+                research projects, teaching concepts related to networks and
+                graphs, or exploring complex relationships in different domains.
+                If you plan to use the application in your academic work or
+                research, please make sure to mention or cite the project
+                appropriately. We appreciate any acknowledgment of the tool in
+                your work, and feel free to reach out if you need any further
+                details.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
