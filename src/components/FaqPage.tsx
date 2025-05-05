@@ -17,7 +17,7 @@ const FaqPage = () => {
           <hr
             style={{
               border: "none",
-              borderTop: "2px solid #000",
+              borderTop: "2px solid #030cab",
               margin: "1rem 0",
             }}
           />{" "}
