@@ -297,6 +297,7 @@ const NetworkVisualizer = () => {
   return (
     <div>
       <Header />
+      <ControlPanel />
       <Controls
         onFileUpload={handleFileUpload}
         onCrop={handleCrop}
@@ -359,8 +360,6 @@ const NetworkVisualizer = () => {
       </div>
 
       <NetworkCanvas ref={containerRef} />
-
-      <ControlPanel />
 
       {/* <ChatBox
         networkRef={networkRef}
