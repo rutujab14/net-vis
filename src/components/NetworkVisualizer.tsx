@@ -5,6 +5,7 @@ import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import Controls from "./Controls";
 import Header from "./Header";
+import ControlPanel from "./ControlPanel";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -358,6 +359,8 @@ const NetworkVisualizer = () => {
       </div>
 
       <NetworkCanvas ref={containerRef} />
+
+      <ControlPanel />
 
       {/* <ChatBox
         networkRef={networkRef}
