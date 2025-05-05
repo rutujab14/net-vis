@@ -6,6 +6,7 @@ import NetworkCanvas from "./NetworkCanvas";
 import Controls from "./Controls";
 import Header from "./Header";
 import { Button } from "@mui/material";
+import ControlPanel from "./ControlPanel";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -297,6 +298,8 @@ const NetworkVisualizer = () => {
   return (
     <div>
       <Header />
+
+      <ControlPanel />
       <Controls
         onFileUpload={handleFileUpload}
         onCrop={handleCrop}
