@@ -12,61 +12,6 @@ const ControlPanel = () => {
         <div className="tp-brkv tp-tabv_c tp-v-fst tp-v-vfst tp-v-lst tp-v-vlst">
           <div className="tp-brkv tp-v-fst tp-v-vfst tp-v-lst tp-v-vlst">
             <div className="tp-lblv">
-              <div className="tp-lblv_l">Pos-Log2FC</div>
-              <div className="tp-lblv_v">
-                <div className="tp-sldtxtv">
-                  <div className="tp-sldtxtv_s">
-                    <div className="tp-sldv">
-                      <div className="tp-sldv_t" tabIndex={0}>
-                        <div
-                          className="tp-sldv_k"
-                          style={{ width: "0%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tp-sldtxtv_t">
-                    <div className="tp-txtv tp-txtv-num">
-                      <input className="tp-txtv_i" type="text" />
-                      <div className="tp-txtv_k">
-                        <svg className="tp-txtv_g">
-                          <path className="tp-txtv_gb"></path>
-                          <path className="tp-txtv_gh"></path>
-                        </svg>
-                        <div className="tp-ttv"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tp-lblv">
-              <div className="tp-lblv_l">Neg-Log2FC</div>
-              <div className="tp-lblv_v">
-                <div className="tp-sldtxtv">
-                  <div className="tp-sldtxtv_s">
-                    <div className="tp-sldv">
-                      <div className="tp-sldv_t" tabIndex={0}>
-                        <div className="tp-sldv_k"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tp-sldtxtv_t">
-                    <div className="tp-txtv tp-txtv-num">
-                      <input className="tp-txtv_i" type="text" />
-                      <div className="tp-txtv_k">
-                        <svg className="tp-txtv_g">
-                          <path className="tp-txtv_gb"></path>
-                          <path className="tp-txtv_gh"></path>
-                        </svg>
-                        <div className="tp-ttv"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tp-lblv">
               <div className="tp-lblv_l">Background</div>
               <div className="tp-lblv_v">
                 <div className="tp-colv tp-colv-cpl">
