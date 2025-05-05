@@ -5,11 +5,17 @@ const FaqPage = () => {
     <>
       <Header />
 
-      <div id="content">
+      <div
+        id="content"
+        style={{
+          paddingLeft: "100px",
+          paddingRight: "100px",
+        }}
+      >
         <div id="faq-content">
-          <h1>FAQs</h1>
+          <h1>FAQs</h1> <hr /> <br />
           <div className="qa">
-            <h3 className="question">What is this application used for?</h3>
+            <h4 className="question">What is this application used for?</h4>
             <div className="answer">
               <p>
                 This application is designed to help users visualize and explore
@@ -24,9 +30,9 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h3 className="question">
+            <h4 className="question">
               Do I need to sign up to use the network visualizer?
-            </h3>
+            </h4>
             <div className="answer">
               <p>
                 No, signing up or creating an account is not required to use the
@@ -39,7 +45,7 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h3 className="question">What kind of data can I visualize?</h3>
+            <h4 className="question">What kind of data can I visualize?</h4>
             <div className="answer">
               <p>
                 You can visualize any data that can be represented as a graph of
@@ -68,9 +74,9 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h3 className="question">
+            <h4 className="question">
               How can I interact with the visualization?
-            </h3>
+            </h4>
             <div className="answer">
               <p>
                 The network visualizer offers several interactive features that
@@ -101,7 +107,7 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h3 className="question">What browsers are supported?</h3>
+            <h4 className="question">What browsers are supported?</h4>
             <div className="answer">
               <p>
                 The network visualizer is compatible with modern browsers,
@@ -121,9 +127,9 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h3 className="question">
+            <h4 className="question">
               Can I use this tool for academic or research purposes?
-            </h3>
+            </h4>
             <div className="answer">
               <p>
                 Yes, absolutely! This tool can be used for academic, research,
