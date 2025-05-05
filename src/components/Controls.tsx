@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Button, styled } from "@mui/material";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { Button } from "@mui/material";
 
 interface Props {
   onFileUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,18 +8,6 @@ interface Props {
   showLabels: boolean;
   setShowLabels: (value: boolean) => void;
 }
-
-const VisuallyHiddenInput = styled("input")({
-  clip: "rect(0 0 0 0)",
-  clipPath: "inset(50%)",
-  height: 1,
-  overflow: "hidden",
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  whiteSpace: "nowrap",
-  width: 1,
-});
 
 const Controls = ({
   onFileUpload,
@@ -40,23 +27,17 @@ const Controls = ({
           onChange={onFileUpload}
           style={{ display: "none" }}
         />
-        <Button
-          component="label"
-          role={undefined}
-          variant="contained"
-          tabIndex={-1}
-          startIcon={<CloudUploadIcon />}
-        >
-          Upload files
-          <VisuallyHiddenInput
-            type="file"
-            onChange={(event) => console.log(event.target.files)}
-            multiple
-          />
+        <Button variant="contained" component="span">
+          Choose File
         </Button>
       </label>
-      <button onClick={onCrop}>Crop Network</button> <span />
-      <button onClick={onReset}>Reset</button>
+      <Button variant="contained" onClick={onCrop}>
+        Crop Network
+      </Button>{" "}
+      <span />
+      <Button variant="contained" onClick={onReset}>
+        Reset
+      </Button>
       <br />
       <div className="form-check form-switch">
         <label className="form-check-label" htmlFor="switchCheckChecked">

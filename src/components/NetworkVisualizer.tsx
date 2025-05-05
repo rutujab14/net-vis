@@ -5,6 +5,7 @@ import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import Controls from "./Controls";
 import Header from "./Header";
+import { Button } from "@mui/material";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -316,12 +317,13 @@ const NetworkVisualizer = () => {
           style={{ padding: 6, width: 200 }}
         />
 
-        <button
+        <Button
+          variant="contained"
           onClick={() => handleGeneSearchZoom(searchTerm)}
           style={{ marginLeft: 8 }}
         >
           Search
-        </button>
+        </Button>
 
         {suggestions.length > 0 && (
           <ul
