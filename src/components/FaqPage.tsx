@@ -13,20 +13,22 @@ const FaqPage = () => {
         }}
       >
         <div id="faq-content">
-          <h1>FAQs</h1>{" "}
+          <h1 className="display-5 fw-bold text-body-emphasis">FAQs</h1>{" "}
           <hr
             style={{
               border: "none",
-              borderTop: "2px solid #030cab",
+              borderTop: "3px solid #030cab",
               margin: "1rem 0",
             }}
           />{" "}
           <br />
           <div className="qa">
-            <h4 className="question">What is this application used for?</h4>{" "}
+            <h4 className="fs-2 text-body-emphasis">
+              What is this application used for?
+            </h4>{" "}
             <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 This application is designed to help users visualize and explore
                 complex network data, relationships, or connections between
                 various entities in an interactive and intuitive way. It allows
@@ -39,12 +41,12 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h4 className="question">
+            <h4 className="fs-2 text-body-emphasis">
               Do I need to sign up to use the network visualizer?
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 No, signing up or creating an account is not required to use the
                 network visualizer. Simply open the application, and you can
                 start visualizing network data immediately. It's a
@@ -55,10 +57,12 @@ const FaqPage = () => {
             </div>
           </div>
           <div className="qa">
-            <h4 className="question">What kind of data can I visualize?</h4>{" "}
+            <h4 className="fs-2 text-body-emphasis">
+              What kind of data can I visualize?
+            </h4>{" "}
             <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 You can visualize any data that can be represented as a graph of
                 nodes (entities) and edges (connections). This includes a wide
                 range of use cases like:
@@ -86,12 +90,12 @@ const FaqPage = () => {
             <br />
           </div>
           <div className="qa">
-            <h4 className="question">
+            <h4 className="fs-2 text-body-emphasis">
               How can I interact with the visualization?
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 The network visualizer offers several interactive features that
                 let you explore the data effectively:
               </p>
@@ -121,9 +125,12 @@ const FaqPage = () => {
             <br />
           </div>
           <div className="qa">
-            <h4 className="question">What browsers are supported?</h4> <hr />
+            <h4 className="fs-2 text-body-emphasis">
+              What browsers are supported?
+            </h4>{" "}
+            <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 The network visualizer is compatible with modern browsers,
                 including:
               </p>
@@ -142,12 +149,12 @@ const FaqPage = () => {
             <br />
           </div>
           <div className="qa">
-            <h4 className="question">
+            <h4 className="fs-2 text-body-emphasis">
               Can I use this tool for academic or research purposes?
             </h4>{" "}
             <hr />
             <div className="answer">
-              <p>
+              <p className="lead mb-4">
                 Yes, absolutely! This tool can be used for academic, research,
                 or educational purposes, including visualizing datasets for
                 research projects, teaching concepts related to networks and
