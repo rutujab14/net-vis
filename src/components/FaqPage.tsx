@@ -39,6 +39,7 @@ const FaqPage = () => {
                 hierarchies, computer networks, and more.
               </p>
             </div>
+            <br />
           </div>
           <div className="qa">
             <h4 className="fs-2 text-body-emphasis">
@@ -55,6 +56,7 @@ const FaqPage = () => {
                 account or personal information.
               </p>
             </div>
+            <br />
           </div>
           <div className="qa">
             <h4 className="fs-2 text-body-emphasis">
