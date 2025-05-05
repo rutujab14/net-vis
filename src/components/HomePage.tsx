@@ -15,9 +15,9 @@ const HomePage = () => {
       <Header />
 
       <div className="px-4 py-5 my-5 text-center">
-        <h1 className="display-5 fw-bold text-body-emphasis">
+        <h2 className="display-5 fw-bold text-body-emphasis">
           Welcome to the Network Visualizer App
-        </h1>
+        </h2>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
             This web application allows you to explore and understand complex
@@ -51,14 +51,14 @@ const HomePage = () => {
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={ContentPasteSearchIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">Interactive Exploration</h3>
+            <h4 className="fs-2 text-body-emphasis">Interactive Exploration</h4>
             <p>Click and drag nodes to explore connections dynamically.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={PsychologyIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">Relationship Mapping</h3>
+            <h4 className="fs-2 text-body-emphasis">Relationship Mapping</h4>
             <p>
               Easily visualize how different elements in a network are
               connected.
@@ -68,32 +68,32 @@ const HomePage = () => {
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={ArticleOutlinedIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">
+            <h4 className="fs-2 text-body-emphasis">
               Clean and Intuitive Interface
-            </h3>
+            </h4>
             <p>Simple layout that makes navigating complex networks easier.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={TipsAndUpdatesOutlinedIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">
+            <h4 className="fs-2 text-body-emphasis">
               Insightful Visualization
-            </h3>
+            </h4>
             <p>Identify patterns, clusters, and key nodes at a glance.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={RocketLaunchOutlinedIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">Optimized Performance</h3>
+            <h4 className="fs-2 text-body-emphasis">Optimized Performance</h4>
             <p>Designed to handle medium-sized networks smoothly.</p>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={UpdateOutlinedIcon} />
             </div>
-            <h3 className="fs-2 text-body-emphasis">Future-Ready</h3>
+            <h4 className="fs-2 text-body-emphasis">Future-Ready</h4>
             <p>
               Planned support for both 2D and 3D visual modes, along with
               AI-integrated chatbot assistance.
