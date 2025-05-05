@@ -18,9 +18,9 @@ const Header = () => {
           <ul className="nav nav-pills">
             <li className="nav-item">
               <Link
-                to="/"
+                to="/home"
                 className={`nav-link ${
-                  location.pathname === "/" ? "active" : ""
+                  location.pathname === "/home" ? "active" : ""
                 }`}
               >
                 Home

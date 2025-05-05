@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter basename="/net-vis">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/network-visualizer" element={<NetworkVisualizer />} />
