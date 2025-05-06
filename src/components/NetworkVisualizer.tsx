@@ -308,6 +308,7 @@ const NetworkVisualizer = () => {
         onSearch={handleGeneSearchZoom}
         onFileUpload={handleFileUpload}
         onChange={handleOnChange}
+        onCrop={handleCrop}
         onSuggestionClick={handleSuggestionClick}
       />
       <Controls

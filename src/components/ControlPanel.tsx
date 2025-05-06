@@ -8,6 +8,7 @@ interface Props {
   onSearch: (term: string) => void;
   onFileUpload: (file: File) => void;
   onChange: (term: string) => void;
+  onCrop: () => void;
   onSuggestionClick: (suggestion: string) => void;
 }
 
@@ -17,6 +18,7 @@ const ControlPanel = ({
   onSearch,
   onFileUpload,
   onChange,
+  onCrop,
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
@@ -61,6 +63,11 @@ const ControlPanel = ({
         }
       };
       input.click();
+    });
+
+    // Crop Network
+    pane.addButton({ title: "Crop Network" }).on("click", () => {
+      onCrop();
     });
 
     return () => pane.dispose();
