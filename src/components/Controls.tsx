@@ -18,10 +18,6 @@ const Controls = ({
   return (
     <div>
       <h2>Network Visualizer App</h2> <br />
-      <span />
-      <Button variant="contained" onClick={onReset}>
-        Reset
-      </Button>
       <br />
       <div className="form-check form-switch">
         <label className="form-check-label" htmlFor="switchCheckChecked">

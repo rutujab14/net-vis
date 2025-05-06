@@ -305,11 +305,13 @@ const NetworkVisualizer = () => {
       <ControlPanel
         searchterm={searchTerm}
         suggestions={suggestions}
+        showLabels={showLabels}
         onSearch={handleGeneSearchZoom}
         onFileUpload={handleFileUpload}
         onChange={handleOnChange}
         onCrop={handleCrop}
         onReset={handleReset}
+        setShowLabels={setShowLabels}
         onSuggestionClick={handleSuggestionClick}
       />
       <Controls

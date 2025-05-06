@@ -5,31 +5,35 @@ import "./Style.css";
 interface Props {
   searchterm: string;
   suggestions: string[];
+  showLabels: boolean;
   onSearch: (term: string) => void;
   onFileUpload: (file: File) => void;
   onChange: (term: string) => void;
   onCrop: () => void;
   onReset: () => void;
+  setShowLabels: (label: boolean) => void;
   onSuggestionClick: (suggestion: string) => void;
 }
 
 const ControlPanel = ({
   searchterm,
   suggestions,
+  showLabels,
   onSearch,
   onFileUpload,
   onChange,
   onCrop,
   onReset,
+  setShowLabels,
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false); // State to control dropdown visibility
-  const objRef = useRef({ inputFromParent: searchterm });
 
   useEffect(() => {
     if (!paneRef.current) return;
 
+    const objRef = useRef({ inputFromParent: searchterm });
     const pane = new Pane({ container: paneRef.current });
 
     // Adding input binding to Tweakpane
@@ -76,6 +80,16 @@ const ControlPanel = ({
     pane.addButton({ title: "Reset" }).on("click", () => {
       onReset();
     });
+
+    // Show Labels
+    const labelRef = useRef({ inputFromParent: showLabels });
+    pane
+      .addBinding(labelRef.current, "inputFromParent", {
+        label: "Show Labels",
+      })
+      .on("change", (e) => {
+        setShowLabels(e.value);
+      });
 
     return () => pane.dispose();
   }, [searchterm, onSearch, onChange, onFileUpload]);
