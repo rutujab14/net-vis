@@ -18,18 +18,6 @@ const Controls = ({
   return (
     <div>
       <h2>Network Visualizer App</h2> <br />
-      <label htmlFor="file-upload">
-        <input
-          id="file-upload"
-          type="file"
-          accept=".csv"
-          //onChange={onFileUpload}
-          style={{ display: "none" }}
-        />
-        <Button variant="contained" component="span">
-          Choose File
-        </Button>
-      </label>
       <Button variant="contained" onClick={onCrop}>
         Crop Network
       </Button>{" "}
