@@ -82,9 +82,9 @@ const ControlPanel = ({
     });
 
     // Show Labels
-    const labelRef = useRef({ inputFromParent: showLabels });
+    const labelRef = useRef({ labelFromParent: showLabels });
     pane
-      .addBinding(labelRef.current, "inputFromParent", {
+      .addBinding(labelRef.current, "labelFromParent", {
         label: "Show Labels",
       })
       .on("change", (e) => {
