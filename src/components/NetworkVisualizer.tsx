@@ -3,6 +3,7 @@ import * as Papa from "papaparse";
 import { Nodes, Edges } from "./Types";
 import { Network, DataSet, Edge } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
+import ControlPanel from "./ControlPanel";
 import Controls from "./Controls";
 import Header from "./Header";
 import { Button } from "@mui/material";
@@ -298,7 +299,7 @@ const NetworkVisualizer = () => {
     <div>
       <Header />
 
-      {/* <ControlPanel /> */}
+      <ControlPanel searchterm={searchTerm} />
       <Controls
         onFileUpload={handleFileUpload}
         onCrop={handleCrop}

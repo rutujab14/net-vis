@@ -1,23 +1,24 @@
-import React, { useState } from "react";
-import { Pane } from "react-tweakpane"; // import Pane from react-tweakpane
+import { Pane } from "tweakpane";
+import { useEffect, useRef } from "react";
 
-const ControlPanel = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#ffffff"); // Example state
+interface Props {
+  searchterm: string;
+}
 
-  return (
-    <div>
-      <Pane>
-        {/* Create an input for color selection */}
-        <input
-          type="color"
-          value={backgroundColor}
-          onChange={(e) => setBackgroundColor(e.target.value)}
-        />
-      </Pane>
-      {/* You can also display or apply the background color */}
-      <div style={{ backgroundColor, width: "100px", height: "100px" }}></div>
-    </div>
-  );
+const ControlPanel = ({ searchterm }: Props) => {
+  const paneRef = useRef<HTMLDivElement>(null);
+  const objRef = useRef({ inputFromParent: searchterm });
+
+  useEffect(() => {
+    if (!paneRef.current) return;
+
+    const pane = new Pane({ container: paneRef.current });
+    pane.addBinding(objRef.current, "inputFromParent");
+
+    return () => pane.dispose();
+  }, []);
+
+  return <div ref={paneRef} />;
 };
 
 export default ControlPanel;
