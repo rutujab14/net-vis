@@ -1,8 +1,7 @@
-import * as React from "react";
 import { Button } from "@mui/material";
 
 interface Props {
-  onFileUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFileUpload: (file: File) => void;
   onCrop: () => void;
   onReset: () => void;
   showLabels: boolean;
@@ -24,7 +23,7 @@ const Controls = ({
           id="file-upload"
           type="file"
           accept=".csv"
-          onChange={onFileUpload}
+          //onChange={onFileUpload}
           style={{ display: "none" }}
         />
         <Button variant="contained" component="span">

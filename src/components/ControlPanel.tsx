@@ -6,6 +6,7 @@ interface Props {
   searchterm: string;
   suggestions: string[];
   onSearch: (term: string) => void;
+  onFileUpload: (file: File) => void;
   onChange: (term: string) => void;
   onSuggestionClick: (suggestion: string) => void;
 }
@@ -14,6 +15,7 @@ const ControlPanel = ({
   searchterm,
   suggestions,
   onSearch,
+  onFileUpload,
   onChange,
   onSuggestionClick,
 }: Props) => {
@@ -45,8 +47,24 @@ const ControlPanel = ({
         setIsDropdownVisible(false); // hide drop down
       });
 
+    // File Upload
+    pane.addButton({ title: "Upload CSV" }).on("click", () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".csv";
+
+      input.onchange = (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target.files && target.files[0]) {
+          const file = target.files[0];
+          onFileUpload(file);
+        }
+      };
+      input.click();
+    });
+
     return () => pane.dispose();
-  }, [searchterm, onSearch, onChange]);
+  }, [searchterm, onSearch, onChange, onFileUpload]);
 
   return (
     <div ref={paneRef} className="search-term">

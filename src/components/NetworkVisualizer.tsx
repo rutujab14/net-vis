@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import * as Papa from "papaparse";
 import { Nodes, Edges } from "./Types";
-import { Network, DataSet, Edge } from "vis-network/standalone";
+import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import ControlPanel from "./ControlPanel";
 import Controls from "./Controls";
@@ -25,8 +25,7 @@ const NetworkVisualizer = () => {
     Record<string, string>
   >({});
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const handleFileUpload = (file: File) => {
     if (!file) return;
 
     Papa.parse<Nodes>(file, {
@@ -307,6 +306,7 @@ const NetworkVisualizer = () => {
         searchterm={searchTerm}
         suggestions={suggestions}
         onSearch={handleGeneSearchZoom}
+        onFileUpload={handleFileUpload}
         onChange={handleOnChange}
         onSuggestionClick={handleSuggestionClick}
       />
