@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
+    "@tweakpane/plugin-essentials": "^0.2.1",
     "bootstrap": "^5.3.5",
     "mui": "^0.0.1",
     "papaparse": "^5.5.2",
