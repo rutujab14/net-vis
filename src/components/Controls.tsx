@@ -18,9 +18,6 @@ const Controls = ({
   return (
     <div>
       <h2>Network Visualizer App</h2> <br />
-      <Button variant="contained" onClick={onCrop}>
-        Crop Network
-      </Button>{" "}
       <span />
       <Button variant="contained" onClick={onReset}>
         Reset
