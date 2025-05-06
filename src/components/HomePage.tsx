@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import "./HomePage.css";
+import "./Style.css";
 import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";

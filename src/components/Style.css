@@ -1,0 +1,13 @@
+.feature-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+  }
+
+.search-term {
+  width: 300px;
+  padding: 8px;
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

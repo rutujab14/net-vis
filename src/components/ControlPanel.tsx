@@ -1,5 +1,6 @@
 import { Pane } from "tweakpane";
 import { useEffect, useRef } from "react";
+import "./Style.css";
 
 interface Props {
   searchterm: string;
@@ -18,17 +19,7 @@ const ControlPanel = ({ searchterm }: Props) => {
     return () => pane.dispose();
   }, []);
 
-  return (
-    <div
-      ref={paneRef}
-      style={{
-        top: "110.957px",
-        left: "421.078px",
-        transform: "translate(-94.4121%, 21px)",
-        visibility: "hidden",
-      }}
-    />
-  );
+  return <div ref={paneRef} className="search-term" />;
 };
 
 export default ControlPanel;
