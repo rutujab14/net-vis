@@ -18,7 +18,17 @@ const ControlPanel = ({ searchterm }: Props) => {
     return () => pane.dispose();
   }, []);
 
-  return <div ref={paneRef} />;
+  return (
+    <div
+      ref={paneRef}
+      style={{
+        top: "110.957px",
+        left: "421.078px",
+        transform: "translate(-94.4121%, 21px)",
+        visibility: "hidden",
+      }}
+    />
+  );
 };
 
 export default ControlPanel;
