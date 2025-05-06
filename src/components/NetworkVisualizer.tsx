@@ -6,7 +6,6 @@ import NetworkCanvas from "./NetworkCanvas";
 import ControlPanel from "./ControlPanel";
 import Controls from "./Controls";
 import Header from "./Header";
-import { Button } from "@mui/material";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -267,12 +266,11 @@ const NetworkVisualizer = () => {
     });
   };
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+  const handleOnChange = (term: string) => {
+    setSearchTerm(term);
 
-    if (value && nodes) {
-      const lowerValue = value.toLowerCase();
+    if (term && nodes) {
+      const lowerValue = term.toLowerCase();
       const filtered = nodes
         .get()
         .map((node: Nodes) => node.label ?? "")
@@ -282,6 +280,12 @@ const NetworkVisualizer = () => {
     } else {
       setSuggestions([]);
     }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchTerm(suggestion); // Update search term with clicked suggestion
+    setSuggestions([]); // Clear suggestions
+    handleGeneSearchZoom(suggestion); // Trigger the search
   };
 
   useEffect(() => {
@@ -299,7 +303,13 @@ const NetworkVisualizer = () => {
     <div>
       <Header />
 
-      <ControlPanel searchterm={searchTerm} />
+      <ControlPanel
+        searchterm={searchTerm}
+        suggestions={suggestions}
+        onSearch={handleGeneSearchZoom}
+        onChange={handleOnChange}
+        onSuggestionClick={handleSuggestionClick}
+      />
       <Controls
         onFileUpload={handleFileUpload}
         onCrop={handleCrop}
@@ -307,60 +317,6 @@ const NetworkVisualizer = () => {
         showLabels={showLabels}
         setShowLabels={setShowLabels}
       />
-
-      <div style={{ margin: "10px 0" }}>
-        <input
-          type="text"
-          placeholder="Search gene..."
-          value={searchTerm}
-          onChange={handleOnChange}
-          onKeyDown={(e) =>
-            e.key === "Enter" && handleGeneSearchZoom(searchTerm)
-          }
-          style={{ padding: 6, width: 200 }}
-        />
-
-        <Button
-          variant="contained"
-          onClick={() => handleGeneSearchZoom(searchTerm)}
-          style={{ marginLeft: 8 }}
-        >
-          Search
-        </Button>
-
-        {suggestions.length > 0 && (
-          <ul
-            style={{
-              border: "1px solid #ccc",
-              width: 200,
-              marginTop: 4,
-              padding: 0,
-              listStyle: "none",
-              background: "#fff",
-              position: "absolute",
-              zIndex: 1000,
-            }}
-          >
-            {suggestions.map((s, idx) => (
-              <li
-                key={idx}
-                style={{
-                  padding: "6px",
-                  cursor: "pointer",
-                  borderBottom: "1px solid #eee",
-                }}
-                onClick={() => {
-                  setSearchTerm(s);
-                  setSuggestions([]);
-                  handleGeneSearchZoom(s);
-                }}
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
 
       <NetworkCanvas ref={containerRef} />
 
