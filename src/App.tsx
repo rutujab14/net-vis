@@ -10,9 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/faq" element={<FaqPage />} />
-        <Route path="/network-visualizer" element={<NetworkVisualizer />}>
-          <div style={{ color: "red" }}>Hello World</div>;
-        </Route>
+        <Route path="/network-visualizer" element={<NetworkVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
