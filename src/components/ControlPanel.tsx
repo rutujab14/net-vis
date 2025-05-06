@@ -1,4 +1,5 @@
 import { Pane } from "tweakpane";
+import { Button } from "@mui/material";
 import { useEffect, useRef } from "react";
 import "./Style.css";
 
@@ -18,6 +19,7 @@ const ControlPanel = ({
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
+  console.log("PaneRef: ", paneRef);
   const objRef = useRef({ inputFromParent: searchterm });
 
   useEffect(() => {
