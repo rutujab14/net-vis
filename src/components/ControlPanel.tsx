@@ -1,5 +1,5 @@
 import { Pane } from "tweakpane";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Style.css";
 
 interface Props {
@@ -18,6 +18,7 @@ const ControlPanel = ({
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false); // State to control dropdown visibility
   const objRef = useRef({ inputFromParent: searchterm });
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const ControlPanel = ({
       label: "Search Gene",
       onChange: (value: string) => {
         onChange(value); // Handle the change in search term
+        setIsDropdownVisible(true); // show drop down
       },
     });
 
@@ -40,14 +42,15 @@ const ControlPanel = ({
       })
       .on("click", () => {
         onSearch(objRef.current.inputFromParent); // Call search with the bound value
+        setIsDropdownVisible(false); // hide drop down
       });
 
     return () => pane.dispose();
-  }, [searchterm, suggestions, onSearch, onChange, onSuggestionClick]);
+  }, [searchterm, onSearch, onChange]);
 
   return (
     <div ref={paneRef} className="search-term">
-      {suggestions.length > 0 && (
+      {isDropdownVisible && suggestions.length > 0 && (
         <ul
           style={{
             border: "1px solid #ccc",
@@ -58,6 +61,8 @@ const ControlPanel = ({
             background: "#fff",
             position: "absolute",
             zIndex: 1000,
+            maxHeight: "200px", // Limit dropdown height
+            overflowY: "auto", // Scrollable if too many suggestions
           }}
         >
           {suggestions.map((s, idx) => (
@@ -70,6 +75,7 @@ const ControlPanel = ({
               }}
               onClick={() => {
                 onSuggestionClick(s); // Handle suggestion click
+                setIsDropdownVisible(false); // hide drop down
               }}
             >
               {s}
