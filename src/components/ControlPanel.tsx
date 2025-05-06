@@ -28,14 +28,15 @@ const ControlPanel = ({
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
+  const objRef = useRef({ inputFromParent: searchterm });
+  const labelRef = useRef({ labelFromParent: showLabels });
+
   const [isDropdownVisible, setIsDropdownVisible] = useState(false); // State to control dropdown visibility
 
   useEffect(() => {
     if (!paneRef.current) return;
 
-    const objRef = useRef({ inputFromParent: searchterm });
     const pane = new Pane({ container: paneRef.current });
-    const labelRef = useRef({ labelFromParent: showLabels });
 
     // Adding input binding to Tweakpane
     pane.addBinding(objRef.current, "inputFromParent", {
