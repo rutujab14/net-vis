@@ -14,7 +14,9 @@ const ControlPanel = ({ searchterm }: Props) => {
     if (!paneRef.current) return;
 
     const pane = new Pane({ container: paneRef.current });
-    pane.addBinding(objRef.current, "inputFromParent");
+    pane.addBinding(objRef.current, "inputFromParent", {
+      label: "Search Gene",
+    });
 
     return () => pane.dispose();
   }, []);
