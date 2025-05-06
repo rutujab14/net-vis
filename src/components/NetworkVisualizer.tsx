@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import * as Papa from "papaparse";
 import { Nodes, Edges } from "./Types";
-import { Network, DataSet } from "vis-network/standalone";
+import { Network, DataSet, Edge } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import Controls from "./Controls";
 import Header from "./Header";
 import { Button } from "@mui/material";
-import ControlPanel from "./ControlPanel";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -170,18 +169,18 @@ const NetworkVisualizer = () => {
     const selectedEdges = edges
       .get()
       .filter(
-        (edge) =>
+        (edge: Edges) =>
           selectedNodeIds.includes(edge.from) ||
           selectedNodeIds.includes(edge.to)
       );
 
     const selectedNodes = nodes
       .get()
-      .filter((node) => selectedNodeIds.includes(node.id));
+      .filter((node: Nodes) => selectedNodeIds.includes(node.id));
 
     // Collect first-degree nodes (nodes connected to the selected nodes)
     const firstDegreeNodeIds = new Set<string>();
-    selectedEdges.forEach((edge) => {
+    selectedEdges.forEach((edge: Edges) => {
       if (selectedNodeIds.includes(edge.from)) {
         firstDegreeNodeIds.add(edge.to);
       }
@@ -195,7 +194,7 @@ const NetworkVisualizer = () => {
       ...nodes
         .get()
         .filter(
-          (node) =>
+          (node: Nodes) =>
             firstDegreeNodeIds.has(node.id) &&
             !selectedNodeIds.includes(node.id)
         )
@@ -232,7 +231,7 @@ const NetworkVisualizer = () => {
   const handleGeneSearchZoom = (geneName: string) => {
     if (!networkRef.current || !nodes || !edges) return;
 
-    const matchedNode = nodes.get().find((node) => {
+    const matchedNode = nodes.get().find((node: Nodes) => {
       return (
         node.label?.toLowerCase() === geneName.toLowerCase() ||
         (node as any).gene?.toLowerCase() === geneName.toLowerCase()
@@ -247,7 +246,7 @@ const NetworkVisualizer = () => {
     const nodeId = matchedNode.id;
 
     // Highlight the node (optional)
-    const updatedNodes = nodes.get().map((n) =>
+    const updatedNodes = nodes.get().map((n: Nodes) =>
       n.id === nodeId
         ? {
             ...n,
@@ -275,8 +274,8 @@ const NetworkVisualizer = () => {
       const lowerValue = value.toLowerCase();
       const filtered = nodes
         .get()
-        .map((node) => node.label ?? "")
-        .filter((label) => label.toLowerCase().startsWith(lowerValue))
+        .map((node: Nodes) => node.label ?? "")
+        .filter((label: string) => label.toLowerCase().startsWith(lowerValue))
         .slice(0, 5); // limit to top 5 suggestions
       setSuggestions(filtered);
     } else {
@@ -287,7 +286,7 @@ const NetworkVisualizer = () => {
   useEffect(() => {
     if (nodes) {
       const currentNodes = nodes.get();
-      const updatedNodes = currentNodes.map((node) => ({
+      const updatedNodes = currentNodes.map((node: Nodes) => ({
         id: node.id,
         label: showLabels ? node.id : "",
       }));
@@ -299,7 +298,7 @@ const NetworkVisualizer = () => {
     <div>
       <Header />
 
-      <ControlPanel />
+      {/* <ControlPanel /> */}
       <Controls
         onFileUpload={handleFileUpload}
         onCrop={handleCrop}
