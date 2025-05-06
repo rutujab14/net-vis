@@ -309,6 +309,7 @@ const NetworkVisualizer = () => {
         onFileUpload={handleFileUpload}
         onChange={handleOnChange}
         onCrop={handleCrop}
+        onReset={handleReset}
         onSuggestionClick={handleSuggestionClick}
       />
       <Controls

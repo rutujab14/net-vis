@@ -9,6 +9,7 @@ interface Props {
   onFileUpload: (file: File) => void;
   onChange: (term: string) => void;
   onCrop: () => void;
+  onReset: () => void;
   onSuggestionClick: (suggestion: string) => void;
 }
 
@@ -19,6 +20,7 @@ const ControlPanel = ({
   onFileUpload,
   onChange,
   onCrop,
+  onReset,
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
@@ -68,6 +70,11 @@ const ControlPanel = ({
     // Crop Network
     pane.addButton({ title: "Crop Network" }).on("click", () => {
       onCrop();
+    });
+
+    // Reset
+    pane.addButton({ title: "Reset" }).on("click", () => {
+      onReset();
     });
 
     return () => pane.dispose();
