@@ -43,7 +43,7 @@ const ControlPanel = ({
       });
 
     return () => pane.dispose();
-  }, [searchterm, onSearch]);
+  }, [searchterm, suggestions, onSearch, onChange, onSuggestionClick]);
 
   return (
     <div ref={paneRef} className="search-term">
