@@ -82,7 +82,9 @@ const ControlPanel = ({
     });
 
     // Show Labels
+    console.log("starting labels");
     const labelRef = useRef({ labelFromParent: showLabels });
+    console.log("checking if still working");
     pane
       .addBinding(labelRef.current, "labelFromParent", {
         label: "Show Labels",
@@ -90,6 +92,7 @@ const ControlPanel = ({
       .on("change", (e) => {
         setShowLabels(e.value);
       });
+    console.log("...still working");
 
     return () => pane.dispose();
   }, [searchterm, onSearch, onChange, onFileUpload]);
