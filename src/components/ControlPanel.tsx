@@ -117,7 +117,7 @@ const ControlPanel = ({
                 borderBottom: "1px solid #eee",
               }}
               onClick={() => {
-                onSuggestionClick(s); // Handle suggestion click
+                onSuggestionClick(s); // suggestion click
                 setIsDropdownVisible(false); // hide drop down
               }}
             >
