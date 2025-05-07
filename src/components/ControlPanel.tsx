@@ -160,7 +160,9 @@ const ControlPanel = ({
         </div>
         {fileName && (
           <div>
-            <p className="mb-2">Uploaded File: {fileName}</p>
+            <p className="mb-1">
+              <b>Uploaded File</b>: {fileName}
+            </p>
           </div>
         )}
       </div>
