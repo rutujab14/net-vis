@@ -5,9 +5,11 @@
   }
 
 .control-panel {
+  position: absolute;
   width: 300px;
   padding: 8px;
   background: #f8f9fa;
   border: 1px solid #ccc;
   border-radius: 8px;
+  z-index: 1000;
 }
