@@ -5,7 +5,6 @@ import "./Style.css";
 interface Props {
   searchterm: string;
   suggestions: string[];
-  showLabels: boolean;
   onSearch: (term: string) => void;
   onFileUpload: (file: File) => void;
   onChange: (term: string) => void;
@@ -18,7 +17,6 @@ interface Props {
 const ControlPanel = ({
   searchterm,
   suggestions,
-  showLabels,
   onSearch,
   onFileUpload,
   onChange,
@@ -28,10 +26,8 @@ const ControlPanel = ({
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
-  const objRef = useRef({ inputFromParent: searchterm });
-  const labelRef = useRef({ labelFromParent: showLabels });
-
   const [isDropdownVisible, setIsDropdownVisible] = useState(false); // State to control dropdown visibility
+  const objRef = useRef({ inputFromParent: searchterm });
 
   useEffect(() => {
     if (!paneRef.current) return;
@@ -84,13 +80,13 @@ const ControlPanel = ({
     });
 
     // Show Labels
-    pane
-      .addBinding(labelRef.current, "labelFromParent", {
-        label: "Show Labels",
-      })
-      .on("change", (e) => {
-        setShowLabels(e.value);
-      });
+    const folder = pane.addFolder({ title: "Labels" });
+    folder.addButton({ title: "On" }).on("click", () => {
+      setShowLabels(true);
+    });
+    folder.addButton({ title: "Off" }).on("click", () => {
+      setShowLabels(false);
+    });
 
     return () => pane.dispose();
   }, [searchterm, onSearch, onChange, onFileUpload]);
