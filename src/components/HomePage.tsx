@@ -37,7 +37,7 @@ const HomePage = () => {
                 type="button"
                 className="btn btn-primary btn-lg px-4 gap-3"
               >
-                Visualize Network
+                Visualize Network =>
               </button>
             </Link>
           </div>
