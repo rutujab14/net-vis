@@ -158,12 +158,12 @@ const ControlPanel = ({
             </ul>
           )}
         </div>
+        {fileName && (
+          <div>
+            <p className="mb-2">Uploaded File: {fileName}</p>
+          </div>
+        )}
       </div>
-      {fileName && (
-        <div>
-          <h3>Uploaded File: {fileName}</h3>
-        </div>
-      )}
     </>
   );
 };
