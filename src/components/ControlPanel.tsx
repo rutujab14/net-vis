@@ -1,5 +1,5 @@
 import { Pane } from "tweakpane";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Style.css";
 
 interface Props {
@@ -29,6 +29,19 @@ const ControlPanel = ({
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
   const objRef = useRef({ inputFromParent: searchterm });
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (paneRef.current && !paneRef.current.contains(event.target as Node)) {
+        setIsDropdownVisible(false); // Hide the dropdown when clicked outside
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     if (!paneRef.current) return;
@@ -79,12 +92,15 @@ const ControlPanel = ({
     <>
       <div className="control-panel">
         <div ref={paneRef} />
-        <div style={{ margin: "10px 10px" }}>
+        <div style={{ margin: "5px 5px" }}>
           <input
             type="text"
             placeholder="Search gene..."
             value={searchterm}
-            onChange={onChange}
+            onChange={(e) => {
+              onChange(e);
+              setIsDropdownVisible(true);
+            }}
             onKeyDown={(e) => e.key === "Enter" && onSearch(searchterm)}
             style={{ padding: 6, width: 200 }}
           />
@@ -122,6 +138,7 @@ const ControlPanel = ({
                   onClick={() => {
                     setSearchTerm(s);
                     onSuggestionClick(s);
+                    setIsDropdownVisible(false);
                   }}
                 >
                   {s}
