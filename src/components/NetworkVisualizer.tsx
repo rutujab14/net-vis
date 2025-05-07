@@ -4,7 +4,6 @@ import { Nodes, Edges } from "./Types";
 import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import ControlPanel from "./ControlPanel";
-import Controls from "./Controls";
 import Header from "./Header";
 //import ChatBox from "./ChatBox";
 
