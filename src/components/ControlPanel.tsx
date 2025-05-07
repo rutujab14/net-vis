@@ -35,13 +35,16 @@ const ControlPanel = ({
     const pane = new Pane({ container: paneRef.current });
 
     // Adding input binding to Tweakpane
-    pane.addBinding(objRef.current, "inputFromParent", {
-      label: "Search Gene",
-      onChange: (value: string) => {
-        onChange(value); // Handle the change in search term
+    pane
+      .addBinding(objRef.current, "inputFromParent", {
+        label: "Search Gene",
+      })
+      .on("change", (ev) => {
+        onChange(ev.value); // Handle the change in search term
         setIsDropdownVisible(true); // show drop down
-      },
-    });
+      });
+
+    objRef.current.inputFromParent = searchterm;
 
     // Adding a button to trigger search
     pane
