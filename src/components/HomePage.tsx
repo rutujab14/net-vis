@@ -14,12 +14,12 @@ const HomePage = () => {
     <>
       <Header />
 
-      <div className="px-4 py-5 my-5 text-center">
+      <div className="px-3 py-3 my-3 text-center">
         <h2 className="display-5 fw-bold text-body-emphasis">
           Welcome to the Network Visualizer App
         </h2>
         <div className="col-lg-6 mx-auto">
-          <p className="lead mb-4">
+          <p className="mb-2">
             This web application allows you to explore and understand complex
             networks through interactive visualizations. Whether you're looking
             at relationships in a social network, connections in an
@@ -33,10 +33,7 @@ const HomePage = () => {
               to="/network-visualizer"
               className="text-blue-600 hover:underline text-xl"
             >
-              <button
-                type="button"
-                className="btn btn-primary btn-lg px-4 gap-3"
-              >
+              <button type="button" className="btn btn-primary btn-sm px-3">
                 Visualize Network -{">"}
               </button>
             </Link>
@@ -44,9 +41,9 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="container px-4 py-5" id="featured-3">
+      <div className="container px-3 py-3" id="featured-3">
         <h2 className="pb-2 border-bottom">Features</h2>
-        <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div className="row g-3 py-3 row-cols-1 row-cols-lg-3">
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <SvgIcon component={ContentPasteSearchIcon} />
