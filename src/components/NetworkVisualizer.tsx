@@ -264,7 +264,8 @@ const NetworkVisualizer = () => {
     });
   };
 
-  const handleOnChange = (term: string) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const term = e.target.value;
     setSearchTerm(term);
 
     if (term && nodes) {
@@ -305,6 +306,7 @@ const NetworkVisualizer = () => {
 
       <ControlPanel
         searchterm={searchTerm}
+        setSearchTerm={setSearchTerm}
         suggestions={suggestions}
         onSearch={handleGeneSearchZoom}
         onFileUpload={handleFileUpload}

@@ -1,13 +1,14 @@
 import { Pane } from "tweakpane";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./Style.css";
 
 interface Props {
   searchterm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   suggestions: string[];
   onSearch: (term: string) => void;
   onFileUpload: (file: File) => void;
-  onChange: (term: string) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onCrop: () => void;
   onReset: () => void;
   setShowLabels: (label: boolean) => void;
@@ -16,6 +17,7 @@ interface Props {
 
 const ControlPanel = ({
   searchterm,
+  setSearchTerm,
   suggestions,
   onSearch,
   onFileUpload,
@@ -26,7 +28,6 @@ const ControlPanel = ({
   onSuggestionClick,
 }: Props) => {
   const paneRef = useRef<HTMLDivElement>(null);
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false); // State to control dropdown visibility
   const objRef = useRef({ inputFromParent: searchterm });
 
   useEffect(() => {
@@ -34,27 +35,7 @@ const ControlPanel = ({
 
     const pane = new Pane({ container: paneRef.current });
 
-    // Adding input binding to Tweakpane
-    pane
-      .addBinding(objRef.current, "inputFromParent", {
-        label: "Search Gene",
-      })
-      .on("change", (ev) => {
-        onChange(ev.value); // Handle the change in search term
-        setIsDropdownVisible(true); // show drop down
-      });
-
     objRef.current.inputFromParent = searchterm;
-
-    // Adding a button to trigger search
-    pane
-      .addButton({
-        title: "Search", // Button Label
-      })
-      .on("click", () => {
-        onSearch(objRef.current.inputFromParent); // Call search with the bound value
-        setIsDropdownVisible(false); // hide drop down
-      });
 
     // File Upload
     pane.addButton({ title: "Upload CSV" }).on("click", () => {
@@ -92,43 +73,58 @@ const ControlPanel = ({
     });
 
     return () => pane.dispose();
-  }, [searchterm, onSearch, onChange, onFileUpload]);
+  }, [onChange, onFileUpload]);
 
   return (
     <div ref={paneRef} className="search-term">
-      {isDropdownVisible && suggestions.length > 0 && (
-        <ul
-          style={{
-            border: "1px solid #ccc",
-            width: 200,
-            marginTop: 4,
-            padding: 0,
-            listStyle: "none",
-            background: "#fff",
-            position: "absolute",
-            zIndex: 1000,
-            maxHeight: "200px", // Limit dropdown height
-            overflowY: "auto", // Scrollable if too many suggestions
-          }}
-        >
-          {suggestions.map((s, idx) => (
-            <li
-              key={idx}
-              style={{
-                padding: "6px",
-                cursor: "pointer",
-                borderBottom: "1px solid #eee",
-              }}
-              onClick={() => {
-                onSuggestionClick(s); // suggestion click
-                setIsDropdownVisible(false); // hide drop down
-              }}
-            >
-              {s}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div style={{ margin: "10px 0" }}>
+        <input
+          type="text"
+          placeholder="Search gene..."
+          value={searchterm}
+          onChange={onChange}
+          onKeyDown={(e) => e.key === "Enter" && onSearch(searchterm)}
+          style={{ padding: 6, width: 200 }}
+        />
+
+        <button onClick={() => onSearch(searchterm)} style={{ marginLeft: 8 }}>
+          Search
+        </button>
+
+        {suggestions.length > 0 && (
+          <ul
+            style={{
+              border: "1px solid #ccc",
+              width: 200,
+              marginTop: 4,
+              padding: 0,
+              listStyle: "none",
+              background: "#fff",
+              position: "absolute",
+              zIndex: 1000,
+              maxHeight: 200,
+              overflowY: "auto",
+            }}
+          >
+            {suggestions.map((s, idx) => (
+              <li
+                key={idx}
+                style={{
+                  padding: "6px",
+                  cursor: "pointer",
+                  borderBottom: "1px solid #eee",
+                }}
+                onClick={() => {
+                  setSearchTerm(s);
+                  onSuggestionClick(s);
+                }}
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
