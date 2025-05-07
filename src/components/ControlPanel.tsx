@@ -76,7 +76,8 @@ const ControlPanel = ({
   }, [onChange, onFileUpload]);
 
   return (
-    <div ref={paneRef} className="search-term">
+    <>
+      <div ref={paneRef} className="search-term" />
       <div style={{ margin: "10px 0" }}>
         <input
           type="text"
@@ -125,7 +126,7 @@ const ControlPanel = ({
           </ul>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
