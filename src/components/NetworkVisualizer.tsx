@@ -160,7 +160,7 @@ const NetworkVisualizer = () => {
 
     const selectedNodeIds = network.getSelectedNodes() as string[];
     if (selectedNodeIds.length === 0) {
-      alert("Please crop by selecting nodes first.");
+      alert("Please crop by selecting nodes first. (Shift + Drag)");
       return;
     }
 
