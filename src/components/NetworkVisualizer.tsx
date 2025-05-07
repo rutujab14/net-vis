@@ -286,6 +286,8 @@ const NetworkVisualizer = () => {
     handleGeneSearchZoom(suggestion); // Trigger the search
   };
 
+  console.log("Test");
+
   useEffect(() => {
     if (nodes) {
       const currentNodes = nodes.get();
@@ -311,13 +313,6 @@ const NetworkVisualizer = () => {
         onReset={handleReset}
         setShowLabels={setShowLabels}
         onSuggestionClick={handleSuggestionClick}
-      />
-      <Controls
-        onFileUpload={handleFileUpload}
-        onCrop={handleCrop}
-        onReset={handleReset}
-        showLabels={showLabels}
-        setShowLabels={setShowLabels}
       />
 
       <NetworkCanvas ref={containerRef} />
