@@ -99,7 +99,7 @@ const ControlPanel = ({
     <>
       <div className="control-panel">
         <div ref={paneRef} />
-        <div style={{ margin: "5px 5px" }}>
+        <div style={{ margin: "10px 0" }}>
           <input
             type="text"
             placeholder="Search gene..."
