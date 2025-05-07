@@ -77,54 +77,59 @@ const ControlPanel = ({
 
   return (
     <>
-      <div ref={paneRef} className="search-term" />
-      <div style={{ margin: "10px 0" }}>
-        <input
-          type="text"
-          placeholder="Search gene..."
-          value={searchterm}
-          onChange={onChange}
-          onKeyDown={(e) => e.key === "Enter" && onSearch(searchterm)}
-          style={{ padding: 6, width: 200 }}
-        />
+      <div className="control-panel">
+        <div ref={paneRef} />
+        <div style={{ margin: "10px 0" }}>
+          <input
+            type="text"
+            placeholder="Search gene..."
+            value={searchterm}
+            onChange={onChange}
+            onKeyDown={(e) => e.key === "Enter" && onSearch(searchterm)}
+            style={{ padding: 6, width: 200 }}
+          />
 
-        <button onClick={() => onSearch(searchterm)} style={{ marginLeft: 8 }}>
-          Search
-        </button>
-
-        {suggestions.length > 0 && (
-          <ul
-            style={{
-              border: "1px solid #ccc",
-              width: 200,
-              marginTop: 4,
-              padding: 0,
-              listStyle: "none",
-              background: "#fff",
-              position: "absolute",
-              zIndex: 1000,
-              maxHeight: 200,
-              overflowY: "auto",
-            }}
+          <button
+            onClick={() => onSearch(searchterm)}
+            style={{ marginLeft: 8 }}
           >
-            {suggestions.map((s, idx) => (
-              <li
-                key={idx}
-                style={{
-                  padding: "6px",
-                  cursor: "pointer",
-                  borderBottom: "1px solid #eee",
-                }}
-                onClick={() => {
-                  setSearchTerm(s);
-                  onSuggestionClick(s);
-                }}
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-        )}
+            Search
+          </button>
+
+          {suggestions.length > 0 && (
+            <ul
+              style={{
+                border: "1px solid #ccc",
+                width: 200,
+                marginTop: 4,
+                padding: 0,
+                listStyle: "none",
+                background: "#fff",
+                position: "absolute",
+                zIndex: 1000,
+                maxHeight: 200,
+                overflowY: "auto",
+              }}
+            >
+              {suggestions.map((s, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    padding: "6px",
+                    cursor: "pointer",
+                    borderBottom: "1px solid #eee",
+                  }}
+                  onClick={() => {
+                    setSearchTerm(s);
+                    onSuggestionClick(s);
+                  }}
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </>
   );
