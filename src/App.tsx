@@ -1,18 +1,18 @@
 import "./App.css";
 import HomePage from "./components/HomePage";
 import NetworkVisualizer from "./components/NetworkVisualizer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import FaqPage from "./components/FaqPage";
 
 function App() {
   return (
-    <BrowserRouter basename="/net-vis">
+    <HashRouter basename="/net-vis">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/network-visualizer" element={<NetworkVisualizer />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
