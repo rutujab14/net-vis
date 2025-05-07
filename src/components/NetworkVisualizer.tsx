@@ -11,6 +11,7 @@ const NetworkVisualizer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const networkRef = useRef<Network | null>(null);
 
+  const [fileName, setFileName] = useState<string>("");
   const [nodes, setNodes] = useState<DataSet<Nodes> | null>(null);
   const [edges, setEdges] = useState<DataSet<Edges> | null>(null);
   const [originalNodes, setOriginalNodes] = useState<Nodes[]>([]);
@@ -26,6 +27,8 @@ const NetworkVisualizer = () => {
 
   const handleFileUpload = (file: File) => {
     if (!file) return;
+
+    setFileName(file.name);
 
     Papa.parse<Nodes>(file, {
       header: true,
@@ -316,6 +319,12 @@ const NetworkVisualizer = () => {
         setShowLabels={setShowLabels}
         onSuggestionClick={handleSuggestionClick}
       />
+
+      {fileName && (
+        <div>
+          <h3>Uploaded File: {fileName}</h3>
+        </div>
+      )}
 
       <NetworkCanvas ref={containerRef} />
 
