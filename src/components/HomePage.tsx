@@ -33,7 +33,7 @@ const HomePage = () => {
               to="/network-visualizer"
               className="text-blue-600 hover:underline text-xl"
             >
-              <button type="button" className="btn btn-primary btn-sm px-3">
+              <button type="button" className="btn btn-primary btn-md px-3">
                 Visualize Network -{">"}
               </button>
             </Link>
