@@ -53,7 +53,7 @@ const ControlPanel = ({
 
     // File Upload
     mainFolder
-      .addButton({ title: "Upload", label: "Upload CSV" })
+      .addButton({ title: "Upload", label: "Upload CSV             " })
       .on("click", () => {
         const input = document.createElement("input");
         input.type = "file";
