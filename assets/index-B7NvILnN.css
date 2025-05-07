@@ -1,4 +1,4 @@
-@charset "UTF-8";.feature-icon{height:40px;width:40px;border-radius:5px}.control-panel{position:absolute;top:10px;right:10px;background:#0000;box-shadow:none;padding:10px;z-index:1000}.tweakpane{background-color:#fff0;box-shadow:none;border:none}/*!
+@charset "UTF-8";.feature-icon{height:40px;width:40px;border-radius:5px}.control-panel{position:absolute;width:300px;padding:8px;background:#f8f9fa;border:1px solid #ccc;border-radius:8px;z-index:1000}/*!
 * Bootstrap  v5.3.5 (https://getbootstrap.com/)
 * Copyright 2011-2025 The Bootstrap Authors
 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
