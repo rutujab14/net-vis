@@ -47,37 +47,44 @@ const ControlPanel = ({
     if (!paneRef.current) return;
 
     const pane = new Pane({ container: paneRef.current });
-
     objRef.current.inputFromParent = searchterm;
 
-    // File Upload
-    pane.addButton({ title: "Upload CSV" }).on("click", () => {
-      const input = document.createElement("input");
-      input.type = "file";
-      input.accept = ".csv";
+    const mainFolder = pane.addFolder({ title: "Control Panel" });
 
-      input.onchange = (e) => {
-        const target = e.target as HTMLInputElement;
-        if (target.files && target.files[0]) {
-          const file = target.files[0];
-          onFileUpload(file);
-        }
-      };
-      input.click();
-    });
+    // File Upload
+    mainFolder
+      .addButton({ title: "Upload", label: "Upload CSV" })
+      .on("click", () => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = ".csv";
+
+        input.onchange = (e) => {
+          const target = e.target as HTMLInputElement;
+          if (target.files && target.files[0]) {
+            const file = target.files[0];
+            onFileUpload(file);
+          }
+        };
+        input.click();
+      });
 
     // Crop Network
-    pane.addButton({ title: "Crop Network" }).on("click", () => {
-      onCrop();
-    });
+    mainFolder
+      .addButton({ title: "Crop", label: "Crop Network (Shift+Drag)" })
+      .on("click", () => {
+        onCrop();
+      });
 
     // Reset
-    pane.addButton({ title: "Reset" }).on("click", () => {
-      onReset();
-    });
+    mainFolder
+      .addButton({ title: "Reset", label: "Reset Network" })
+      .on("click", () => {
+        onReset();
+      });
 
     // Show Labels
-    const folder = pane.addFolder({ title: "Labels" });
+    const folder = mainFolder.addFolder({ title: "Labels" });
     folder.addButton({ title: "On" }).on("click", () => {
       setShowLabels(true);
     });
