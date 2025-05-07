@@ -4,6 +4,8 @@ import "./Style.css";
 
 interface Props {
   searchterm: string;
+  fileName: string;
+  setFileName: React.Dispatch<React.SetStateAction<string>>;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   suggestions: string[];
   onSearch: (term: string) => void;
@@ -17,6 +19,8 @@ interface Props {
 
 const ControlPanel = ({
   searchterm,
+  fileName,
+  setFileName,
   setSearchTerm,
   suggestions,
   onSearch,
@@ -155,6 +159,11 @@ const ControlPanel = ({
           )}
         </div>
       </div>
+      {fileName && (
+        <div>
+          <h3>Uploaded File: {fileName}</h3>
+        </div>
+      )}
     </>
   );
 };

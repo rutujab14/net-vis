@@ -309,6 +309,8 @@ const NetworkVisualizer = () => {
 
       <ControlPanel
         searchterm={searchTerm}
+        fileName={fileName}
+        setFileName={setFileName}
         setSearchTerm={setSearchTerm}
         suggestions={suggestions}
         onSearch={handleGeneSearchZoom}
@@ -319,12 +321,6 @@ const NetworkVisualizer = () => {
         setShowLabels={setShowLabels}
         onSuggestionClick={handleSuggestionClick}
       />
-
-      {fileName && (
-        <div>
-          <h3>Uploaded File: {fileName}</h3>
-        </div>
-      )}
 
       <NetworkCanvas ref={containerRef} />
 
