@@ -16,7 +16,9 @@ const Header = () => {
           </svg>{" "}
           <Link
             to="/"
-            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            className={`d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none ${
+              location.pathname === "/" ? "active" : ""
+            }`}
           >
             <span className="fs-4">Network Visualizer</span>
           </Link>
