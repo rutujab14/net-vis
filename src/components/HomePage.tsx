@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import "./Style.css";
+import { Pane } from "tweakpane";
+import { useEffect, useRef } from "react";
 import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
@@ -9,7 +11,40 @@ import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { SvgIcon } from "@mui/material";
 
+/* interface Props {
+  onFileUpload: (file: File) => void;
+} */
+
 const HomePage = () => {
+  const paneRef = useRef<HTMLDivElement>(null);
+  const uploadRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToUpload = () => {
+    uploadRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    if (!paneRef.current) return;
+
+    const pane = new Pane({ container: paneRef.current });
+
+    // File Upload
+    pane.addButton({ title: "Upload", label: "Upload CSV" }).on("click", () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".csv";
+
+      input.onchange = (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target.files && target.files[0]) {
+          const file = target.files[0];
+          //onFileUpload(file);
+        }
+      };
+      input.click();
+    });
+  });
+
   return (
     <>
       <Header />
@@ -33,7 +68,11 @@ const HomePage = () => {
               to="/network-visualizer"
               className="text-blue-600 hover:underline text-xl"
             >
-              <button type="button" className="btn btn-primary btn-md px-3">
+              <button
+                type="button"
+                className="btn btn-primary btn-md px-3"
+                onClick={scrollToUpload}
+              >
                 Visualize Network -{">"}
               </button>
             </Link>
@@ -98,6 +137,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div ref={uploadRef}></div>
     </>
   );
 };

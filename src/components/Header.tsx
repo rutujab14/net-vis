@@ -44,16 +44,6 @@ const Header = () => {
                 FAQs
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/network-visualizer"
-                className={`nav-link ${
-                  location.pathname === "/network-visualizer" ? "active" : ""
-                }`}
-              >
-                Network Visualizer
-              </Link>
-            </li>
           </ul>
         </header>
       </div>
