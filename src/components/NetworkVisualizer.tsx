@@ -70,11 +70,16 @@ const NetworkVisualizer = () => {
 
   useEffect(() => {
     const csvFile = sessionStorage.getItem("uploadedCSV");
+    const csvFileName = sessionStorage.getItem("uploadedCSVName");
     if (!csvFile) return;
 
-    const reconstructedFile = new File([csvFile], fileName, {
-      type: "text/csv",
-    });
+    const reconstructedFile = new File(
+      [csvFile],
+      csvFileName ?? "default.csv",
+      {
+        type: "text/csv",
+      }
+    );
 
     handleFileUpload(reconstructedFile); // put your existing node/edge logic here
 
