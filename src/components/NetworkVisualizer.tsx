@@ -5,7 +5,6 @@ import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import ControlPanel from "./ControlPanel";
 import Header from "./Header";
-import { createCssVarsTheme } from "@mui/system";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -79,7 +78,7 @@ const NetworkVisualizer = () => {
 
     handleFileUpload(reconstructedFile); // put your existing node/edge logic here
 
-    localStorage.removeItem("uploadedCSV"); // clean up
+    sessionStorage.removeItem("uploadedCSV"); // clean up
   });
 
   const initializeNetwork = (
