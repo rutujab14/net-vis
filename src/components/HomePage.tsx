@@ -138,7 +138,9 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div ref={uploadRef}></div>
+      <div ref={uploadRef}>
+        <div ref={paneRef} />
+      </div>
     </>
   );
 };
