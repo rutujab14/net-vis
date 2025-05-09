@@ -8,8 +8,36 @@ import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlin
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { SvgIcon } from "@mui/material";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Typography from "@mui/material/Typography";
 
 const HomePage = () => {
+  const [open, setOpen] = React.useState(false);
+  const [fileName, setFileName] = React.useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setFileName(file.name);
+      setSelectedFile(file);
+      console.log("Selected file:", file);
+    }
+  };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Header />
@@ -29,14 +57,58 @@ const HomePage = () => {
             provide even deeper insight into your data.
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Link
+            {/* <Link
               to="/network-visualizer"
               className="text-blue-600 hover:underline text-xl"
             >
               <button type="button" className="btn btn-primary btn-md px-3">
                 Visualize Network -{">"}
               </button>
-            </Link>
+            </Link> */}
+            <div>
+              <Button onClick={handleClickOpen}>
+                Visualize Network -{">"}
+              </Button>
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Select a File</DialogTitle>
+                <DialogContent>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                      mt: 1,
+                    }}
+                  >
+                    <input
+                      type="file"
+                      accept=".csv"
+                      onChange={handleFileChange}
+                    />
+                    {fileName && (
+                      <Typography variant="body2">
+                        Selected file: {fileName}
+                      </Typography>
+                    )}
+                  </Box>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose}>Cancel</Button>
+                  <Button
+                    onClick={() => {
+                      if (selectedFile) {
+                        // call your Papa.parse or custom handler here
+                        console.log("Processing file:", selectedFile.name);
+                      }
+                      handleClose();
+                    }}
+                    disabled={!selectedFile}
+                  >
+                    Submit
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>
