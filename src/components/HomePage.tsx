@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import "./Style.css";
 import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
@@ -21,23 +21,52 @@ const HomePage = () => {
   const [open, setOpen] = React.useState(false);
   const [fileName, setFileName] = React.useState<string | null>(null);
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
+  const navigate = useNavigate();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
-      setFileName(file.name);
-      setSelectedFile(file);
-      console.log("Selected file:", file);
+    if (!file) return;
+
+    if (file.type !== "text/csv") {
+      alert("Only CSV files are supported!");
+      return;
     }
+    setFileName(file.name);
+    setSelectedFile(file);
+    console.log("Selected file:", file);
   };
 
-  const handleClickOpen = () => {
+  const handleSubmit = () => {
+    if (!selectedFile) return;
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      try {
+        const result = reader.result as string;
+        sessionStorage.setItem("uploadedCSV", result);
+        sessionStorage.setItem("uploadedCSVName", selectedFile.name);
+        navigate("/network-visualizer"); // go to next page
+      } catch (err) {
+        alert("An error occurred while reading the file.");
+      }
+    };
+
+    reader.onerror = () => {
+      alert("Failed to read the file.");
+    };
+
+    reader.readAsText(selectedFile);
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <>
       <Header />
@@ -66,9 +95,7 @@ const HomePage = () => {
               </button>
             </Link> */}
             <div>
-              <Button onClick={handleClickOpen}>
-                Visualize Network -{">"}
-              </Button>
+              <Button onClick={handleOpen}>Visualize Network -{">"}</Button>
               <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Select a File</DialogTitle>
                 <DialogContent>
@@ -83,7 +110,12 @@ const HomePage = () => {
                     <input
                       type="file"
                       accept=".csv"
-                      onChange={handleFileChange}
+                      onChange={(e) => {
+                        handleFileChange(e);
+                        const file = e.target.files?.[0];
+                        if (file) {
+                        }
+                      }}
                     />
                     {fileName && (
                       <Typography variant="body2">
@@ -97,7 +129,7 @@ const HomePage = () => {
                   <Button
                     onClick={() => {
                       if (selectedFile) {
-                        // call your Papa.parse or custom handler here
+                        handleSubmit();
                         console.log("Processing file:", selectedFile.name);
                       }
                       handleClose();

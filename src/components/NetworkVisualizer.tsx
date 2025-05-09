@@ -5,6 +5,7 @@ import { Network, DataSet } from "vis-network/standalone";
 import NetworkCanvas from "./NetworkCanvas";
 import ControlPanel from "./ControlPanel";
 import Header from "./Header";
+import { createCssVarsTheme } from "@mui/system";
 //import ChatBox from "./ChatBox";
 
 const NetworkVisualizer = () => {
@@ -67,6 +68,19 @@ const NetworkVisualizer = () => {
       },
     });
   };
+
+  useEffect(() => {
+    const csvFile = sessionStorage.getItem("uploadedCSV");
+    if (!csvFile) return;
+
+    const reconstructedFile = new File([csvFile], fileName, {
+      type: "text/csv",
+    });
+
+    handleFileUpload(reconstructedFile); // put your existing node/edge logic here
+
+    localStorage.removeItem("uploadedCSV"); // clean up
+  });
 
   const initializeNetwork = (
     nodesData: DataSet<Nodes>,
