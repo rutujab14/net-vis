@@ -44,7 +44,7 @@ const HomePage = () => {
       try {
         const result = reader.result as string;
         sessionStorage.setItem("uploadedCSV", result);
-        sessionStorage.setItem("uploadedCSVName", selectedFile.name);
+        sessionStorage.setItem("uploadedCSVName", fileName ?? "default.csv");
         navigate("/network-visualizer"); // go to next page
       } catch (err) {
         alert("An error occurred while reading the file.");
